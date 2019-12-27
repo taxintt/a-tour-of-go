@@ -10,4 +10,5 @@ func main() {
 	c, python, java := true, false, "no!"
 
 	fmt.Println(i, j, k, c, python, java)
+	fmt.Println("My favorite number is", rand.Intn(10))
 }
