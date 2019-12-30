@@ -5,12 +5,15 @@ import (
 	"math"
 )
 
+// ex) pow(3, 2, 10) -> v=9(=3^2) / lim=10
 func pow(x, n, lim float64) float64 {
-	//math.pow：累乗
-	//pow(3, 2, 10) -> 9(3^2)<10:T - 9, 27(3^3)<20:F - 20
+
+	// how to write -> if (short statement);(conditions);
+	// math.pow：Exponentiation(累乗)
 	if v := math.Pow(x, n); v < lim {
 		return v
 	}else{
+		// %g - float64
 		fmt.Printf("%g >= %g\n", v, lim)
 	}
 	return lim

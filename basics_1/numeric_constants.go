@@ -12,6 +12,7 @@ func needInt(x int) int {return x*10+1}
 func needFloat(x float64) float64 {return x * 0.1}
 
 func main(){
+	// constant 1267650600228229401496703205376 overflows int
 	// fmt.Printf("%T", Big)
 	// fmt.Printf("%T", Small)
 

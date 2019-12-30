@@ -1,4 +1,4 @@
-package basics_2
+package main
 
 import (
 	"fmt"
@@ -7,12 +7,16 @@ import (
 
 func sqrt(x float64) string {
 	if x < 0 {
+		fmt.Println(x)
 		return sqrt(-x) + "i"
 	}
-	//stringと他の型をstring型として一緒に扱うことができるようにする（fmt.Sprintf）
+	// return formatted string（fmt.Sprint）
 	return fmt.Sprint(math.Sqrt(x))
 }
 
 func main() {
-	fmt.Println(sqrt(2), sqrt(-4))
+	
+	// if we use variables, you can set type(float64) 
+	var i = 2.0
+	fmt.Println(sqrt(i), sqrt(-4))
 }
