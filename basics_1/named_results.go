@@ -1,28 +1,30 @@
-package basics_1
+package main
 
 import (
 	"fmt"
 	"strconv"
 )
 
-// func split(sum int) (x, y string) {
-// 	x = strconv.Itoa(sum * 4 / 9)
-// 	y = strconv.Itoa(sum - 1)
-// 	return
-// }
-func split(sum int) (y string) {
-	//関数内では := の代入文を利用可能
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
+func conv_split(sum int) (y string) {
+	//strconv.Itoa: convert int to string、strconv.Atoi: convert string to int
 	x := strconv.Itoa(sum * 4 / 9)
-	z, _ := strconv.Atoi(x) //return two values
+
+	// _: err(type), we don't use error variable
+	z, _ := strconv.Atoi(x)
 	y = strconv.Itoa(z - 1)
-	return y 
+	return 
 }
 
 func main() {
-	//math.pi と math.Pi の違い = 先頭が大文字はモジュール外部から参照可能
 	fmt.Println(split(17))
+	fmt.Println(conv_split(17))
 
-	//var x int = 1 
 	x := 1 
 	fmt.Println(x)
 }
