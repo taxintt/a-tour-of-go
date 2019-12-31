@@ -16,6 +16,8 @@ func pow(x, n, lim float64) float64 {
 		// %g - float64
 		fmt.Printf("%g >= %g\n", v, lim)
 	}
+	
+	// can't use v outside if function
 	return lim
 }
 
