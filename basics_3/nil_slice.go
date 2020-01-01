@@ -5,6 +5,7 @@ import (
 )
 
 func main(){
+	// slice(nil)
 	var s []int
 	fmt.Println(s, len(s), cap(s))
 
