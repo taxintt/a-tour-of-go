@@ -7,6 +7,7 @@ import (
 
 type Myfloat float64 
 
+// method
 func (f Myfloat) Abs() float64{
 	if f < 0{
 		return float64(-f)
