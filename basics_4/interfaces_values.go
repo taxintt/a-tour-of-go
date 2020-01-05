@@ -26,16 +26,16 @@ func (f F) M(){
 }
 
 func main(){
-	var i i
+	var i I
 
 	// 1.pointer receiver
 	i = &T{"Hello"} // address
-	describe()
+	describe(i)
 	i.M()
 
 	// 2.value receiver
 	i = F(math.Pi)
-	describe()
+	describe(i)
 	i.M()
 }
 
