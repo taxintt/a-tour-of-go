@@ -13,6 +13,7 @@ func main(){
 	for{
 		// usage: <input>.Read([]byte) -> output(byte_size, error)
 		n ,err := r.Read(b)
+		
 		fmt.Printf("n == %v err == %v b == %v\n", n, err, b)
 		fmt.Printf("b[:n] = %q\n", b[:n])
 		if err == io.EOF{
