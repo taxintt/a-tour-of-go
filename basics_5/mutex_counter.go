@@ -14,18 +14,20 @@ type SafeCounter struct{
 
 // Inc increments the counter for the given key.
 func (c *SafeCounter)Inc(key string){
-	c.mux.lock()
+	c.mux.lock() //1
 
 	// Lock so only one goroutine at a time can access the map c.v.
-	c.v[key]++
-	c.mux.unlock()
+	c.v[key]++ //2
+	c.mux.unlock() //3
 }
 
 // Value returns the current value of the counter for the given key.
 func (c *SafeCounter)Value(key string)int{
-	c.mux.lock()
-	defer c.mux.unlock()
-	return c.v[key]
+	c.mux.lock() //1
+	
+	// Lock so only one goroutine at a time can access the map c.v.
+	defer c.mux.unlock() //3
+	return c.v[key] //2
 }
 
 func main(){
